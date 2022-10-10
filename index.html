@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Bebas+Neue" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link defer href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link defer href="https://fonts.googleapis.com/css?family=Bebas+Neue" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Recipe Seacher with ingredients filter and category browser">
 <meta name="keywords" content="Recipes, meals, food">
@@ -9,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet" />
 <link href="css/style.css" rel="stylesheet" />
 <link rel="manifest" href="/manifest.json"/>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
 <html lang="en" style="scroll-behavior: smooth;">
   <head>
@@ -43,19 +44,19 @@
        </div>
       </header>
 
-
+      <h3 class="h3" id="h3">Choose your recipe:</h3>
+      <h4 id="norecipes">No Recipes Found</h4>
 
 
     </div>
-    <h3 class="h3" id="h3">Choose your recipe:</h3>
-    <h4 id="norecipes">No Recipes Found</h4>
+
     <ul class="mealList" id="mealList"></ul>
     <div id="root"></div>
     
 
     <footer>
-      <a href="https://github.com/juliosmacedo/" class="fa fa-github"></a>
-      <a href="https://juliosmacedo.github.io/portfolio/" class="fa fa-linkedin"></a>
+      <a href="https://github.com/juliosmacedo/" aria-label="GitHub Link" style="font-size: 1.8rem"  class="fa fa-github"></a>
+      <a href="https://juliosmacedo.github.io/portfolio/" aria-label="portfolio Link" style="font-size: 1.8rem" class="fa fa-linkedin"></a>
     </footer>
   
     <script src="js/scripts.js"></script>
