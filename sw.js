@@ -1,44 +1,24 @@
-if (!self.define) {
-  let e,
-    s = {};
-  const t = (t, c) => (
-    (t = new URL(t + ".js", c).href),
-    s[t] ||
-      new Promise((s) => {
-        if ("document" in self) {
-          const e = document.createElement("script");
-          (e.src = t), (e.onload = s), document.head.appendChild(e);
-        } else (e = t), importScripts(t), s();
-      }).then(() => {
-        let e = s[t];
-        if (!e) throw new Error(`Module ${t} didn’t register its module`);
-        return e;
-      })
-  );
-  self.define = (c, i) => {
-    const r =
-      e ||
-      ("document" in self ? document.currentScript.src : "") ||
-      location.href;
-    if (s[r]) return;
-    let n = {};
-    const o = (e) => t(e, r),
-      f = { module: { uri: r }, exports: n, require: o };
-    s[r] = Promise.all(c.map((e) => f[e] || o(e))).then((e) => (i(...e), n));
-  };
-}
-define(["./workbox-926a8ce9"], function (e) {
-  "use strict";
-  self.addEventListener("message", (e) => {
-    e.data && "SKIP_WAITING" === e.data.type && self.skipWaiting();
-  }),
-    e.precacheAndRoute(
-      [
-        { url: "css/style.css", revision: "ec40f4c8ca310ac0eadf4ce9c8f681cf" },
-        { url: "index.html", revision: "7d802fe41ff1c51224c22151a8ee251c" },
-        { url: "js/scripts.js", revision: "ef08c8671941daae421a5dbaf3d78382" },
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.0.0/workbox-sw.js');
+
+workbox.routing.registerRoute(
+    new RegExp('https://www.themealdb.com/api/json/v1/1/list.php?i=list'),
+    workbox.strategies.cacheFirst()
+);
+
+
+
+workbox.routing.registerRoute(
+    new RegExp('https://fonts.(?:googleapis|gstatic).com/(.*)'),
+    workbox.strategies.cacheFirst({
+      cacheName: 'google-fonts',
+      plugins: [
+        new workbox.expiration.Plugin({
+          maxEntries: 30,
+        }),
+        new workbox.cacheableResponse.Plugin({
+          statuses: [0, 200]
+        }),
       ],
-      { ignoreURLParametersMatching: [/^utm_/, /^fbclid$/] }
-    );
-});
-//# sourceMappingURL=sw.js.map
+    }),
+  );
+workbox.precaching.precacheAndRoute([{"revision":"c057eac63d75159667b9b592b15c58db","url":"css/style.css"},{"revision":"f66cffb8388f602e9c15d1d2e2ede941","url":"index.html"},{"revision":"ef08c8671941daae421a5dbaf3d78382","url":"js/scripts.js"},{"revision":"f9336438854ffc12099e91e49bd9975b","url":"workbox-926a8ce9.js"}]);

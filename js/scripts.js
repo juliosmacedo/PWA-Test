@@ -133,7 +133,7 @@ get_category_btn.addEventListener('click', () => {
 		if (data.meals) {
 		  noRecipesAlert.style.display = 'none';
 		  mealList.style.display = 'block'
-		  container.style.display = 'flex'
+		  container.style.display = 'none'
 		}
 		for (let i=0; i<data.meals.length; i++) {
 		  mealOptions.push(`<button class="button-54" onclick="createMeal(${data.meals[i].idMeal})">${data.meals[i].strMeal}</button>`)
@@ -159,7 +159,7 @@ async function createMeal(qmeal) {
 	const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${qmeal}`);
 	const data = await response.json();
 	const meal = data.meals[0]
-		
+	container.style.display = 'flex'
 	const ingredients = [];
 	for(let i=1; i<=20; i++) {
 		if(meal[`strIngredient${i}`]) {
