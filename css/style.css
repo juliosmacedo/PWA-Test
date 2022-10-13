@@ -144,7 +144,7 @@ html:focus-within {
   }
 
   .headerdiv {
-    flex: 1;
+    margin-bottom: auto;
   }
 
   button {
@@ -231,6 +231,7 @@ body {
   column-count: auto;
   font-family: 'Montserrat';
   font-size: 1rem;
+  flex: 1;
 }
 
 .recipeButton {
@@ -284,11 +285,9 @@ footer {
 
 .fa {
   padding: 20px;
-  font-size: 30px;
   width: 50px;
   text-align: center;
   text-decoration: none;
-
 }
 
 .fa-github, .fa-linkedin {
