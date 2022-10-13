@@ -2,8 +2,7 @@
     "theme_color": "#f6e6c0",
     "background_color": "#f6e6c0",
     "display": "standalone",
-    "scope": "/",
-    "start_url": "/",
+    "start_url": ".",
     "name": "recipe searcher",
     "short_name": "recipe",
     "icons": [
