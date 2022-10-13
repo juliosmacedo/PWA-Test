@@ -1,0 +1,5 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { "namespace": "android_app", "package_name": "io.github.juliosmacedo",
+                 "sha256_cert_fingerprints": ["3F:7A:4B:A0:B6:B5:13:44:50:56:A4:51:AC:A9:FE:15:90:CB:34:4C:9F:11:D8:1B:C4:31:C6:89:D1:23:CB:73"] }
+  }]
