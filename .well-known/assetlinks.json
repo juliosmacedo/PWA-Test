@@ -1,11 +1,6 @@
 [{
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target" : { "namespace": "android_app", "package_name": "io.recipesercher.app",
-                 "sha256_cert_fingerprints": ["3F:7A:4B:A0:B6:B5:13:44:50:56:A4:51:AC:A9:FE:15:90:CB:34:4C:9F:11:D8:1B:C4:31:C6:89:D1:23:CB:73"] }
-  },
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target" : { "namespace": "android_app", "package_name": "io.recipesercher.app",
                  "sha256_cert_fingerprints": ["48:4D:58:6F:05:05:0E:9F:5C:A7:75:B1:3C:64:D9:25:9C:38:95:B9:86:64:7C:3E:B9:ED:77:6F:3B:CD:1D:42"] }
   }
 ]
